@@ -88,8 +88,8 @@ body {
 }
 
 ::selection {
-	background: #3c434c;
-	color: #597db7;
+	background: #151617;
+    color: #bdbb44;
 	border-radius: 2px;
 }
 `

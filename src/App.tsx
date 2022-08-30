@@ -37,31 +37,4 @@ const Main = styled.main`
 			color: rgba(255, 255, 255, 0.82);
 		}
 	}
-	background: linear-gradient(18deg, rgb(8 53 51 / 25%), rgb(38 173 207 / 90%)),
-		linear-gradient(333deg, rgba(39, 52, 64, 0.3), rgba(180, 255, 217, 0.08)),
-		radial-gradient(
-			circle at 77% 89%,
-			rgb(37 210 149 / 80%),
-			rgba(125, 163, 169, 0) 50%
-		),
-		radial-gradient(
-			circle at 15% 95%,
-			rgb(26 91 167 / 80%),
-			rgba(125, 163, 169, 0) 43%
-		),
-		radial-gradient(
-			circle at 65% 23%,
-			rgb(119 151 139 / 40%),
-			rgba(137, 151, 119, 0) 70%
-		),
-		radial-gradient(
-			circle at 10% 0,
-			rgba(187, 211, 204, 0.33),
-			rgba(187, 211, 204, 0) 35%
-		),
-		radial-gradient(
-			circle at 11% 100%,
-			rgb(131 166 203 / 30%),
-			rgba(131, 165, 203, 0) 30%
-		);
 `

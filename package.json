@@ -1,0 +1,29 @@
+{
+    "name": "dogbloods",
+    "version": "0.0.1",
+    "description": "「 落水狗 」- DOG × BLOODS",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LF112/dogbloods"
+    },
+    "author": "LF112",
+    "license": "AGPL-3.0-or-later",
+    "dependencies": {
+        "@types/node": "^17.0.45",
+        "@types/react": "^18.0.15",
+        "@types/react-dom": "^18.0.6",
+        "@types/styled-components": "^5.1.25",
+        "@vitejs/plugin-react": "^2.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-is": "^18.2.0",
+        "styled-components": "^5.3.5",
+        "vite": "^3.0.4",
+        "vite-plugin-svgr": "^2.2.1",
+        "vite-tsconfig-paths": "^3.5.0"
+    }
+}

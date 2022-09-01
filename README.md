@@ -20,6 +20,10 @@
 
 ## 开源许可
 
+仓库中的媒体文件（`*.webp`、`*.ico`、`*.png`）为非开源内容（No License）
+
+本仓库的其余文件（如：`*.ts`、`*.tsx`）使用 AGPL-3.0 协议进行许可
+
     Copyright (C) 2022  LF112 (futiwolf)
 
     This program is free software: you can redistribute it and/or modify

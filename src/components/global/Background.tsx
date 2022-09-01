@@ -24,9 +24,9 @@ export default () => {
 		<Main>
 			<Flash />
 			<nav />
-			<div ref={node}>
+			<Scenes ref={node}>
 				<img src={CG1} data-depth='0.1' />
-			</div>
+			</Scenes>
 		</Main>
 	)
 }
@@ -39,15 +39,6 @@ const Main = styled.main`
 	top: 0;
 	left: 0;
 	z-index: -1;
-	> div {
-		> img {
-			width: 101%;
-			height: 100%;
-			margin-left: -1%;
-			object-fit: cover;
-			object-position: 28% 0%;
-		}
-	}
 	> nav:before {
 		content: '';
 		position: absolute;
@@ -62,13 +53,35 @@ const Main = styled.main`
 	}
 `
 
+const Scenes = styled.div`
+	> img {
+		width: 102%;
+		height: 100%;
+		margin-left: -2%;
+		object-fit: cover;
+		object-position: 28% 0%;
+	}
+	animation: wave 5s 0.1s infinite linear;
+	transform: translate3d(0, 0, 0);
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	@keyframes wave {
+		0% {
+			transform: rotateZ(0deg) translate3d(0, 1%, 0) rotateZ(0deg);
+		}
+		100% {
+			transform: rotateZ(360deg) translate3d(0, 1%, 0) rotateZ(-360deg);
+		}
+	}
+`
+
 const Flash = styled.div`
 	position: absolute;
-	width: 100%;
-	height: calc(100% - 8%);
-	top: 8%;
-	left: 0;
-	z-index: 1;
+	width: 102%;
+	height: calc(100% - 4%);
+	top: 4%;
+	left: -2%;
+	z-index: 10;
 	background: linear-gradient(to bottom, hsl(0deg, 0%, 0%, 62%), transparent);
 	animation-name: breath;
 	animation-duration: 3s;

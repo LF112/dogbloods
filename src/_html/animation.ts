@@ -10,6 +10,27 @@ export const AnimationCSS = css`
 		animation-play-state: paused;
 	}
 
+	@keyframes wave {
+		0% {
+			transform: rotateZ(360deg) translate3d(0, 1%, 0) rotateZ(-360deg);
+		}
+		100% {
+			transform: rotateZ(0deg) translate3d(0, 1%, 0) rotateZ(0deg);
+		}
+	}
+
+	@keyframes breath {
+		from {
+			opacity: 0.4;
+		}
+		50% {
+			opacity: 0.7;
+		}
+		to {
+			opacity: 0.4;
+		}
+	}
+
 	/* 渐入渐出 */
 	@keyframes FadeIn {
 		0% {

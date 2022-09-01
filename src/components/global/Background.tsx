@@ -41,10 +41,9 @@ const Main = styled.main`
 	z-index: -1;
 	> div {
 		> img {
-			width: 110%;
-			height: 110%;
+			width: 101%;
+			height: 100%;
 			margin-left: -1%;
-			margin-top: -2%;
 			object-fit: cover;
 			object-position: 28% 0%;
 		}
@@ -66,8 +65,8 @@ const Main = styled.main`
 const Flash = styled.div`
 	position: absolute;
 	width: 100%;
-	height: 100%;
-	top: 0;
+	height: calc(100% - 8%);
+	top: 8%;
 	left: 0;
 	z-index: 1;
 	background: linear-gradient(to bottom, hsl(0deg, 0%, 0%, 62%), transparent);

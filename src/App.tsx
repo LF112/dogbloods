@@ -3,23 +3,26 @@ import styled from 'styled-components'
 //[ package ]
 
 import Background from 'components/global/Background'
+import Header from 'components/global/Header'
+import Main from 'components/page'
+import Footer from 'components/global/Footer'
 //[ components ]
 
 //=> Main Component
 export default () => {
 	return (
-		<Main>
+		<Page>
 			<Background />
-		</Main>
+			<Header />
+			<Main />
+			<Footer />
+		</Page>
 	)
 }
 
 //=> Style Component
-const Main = styled.main`
+const Page = styled.main`
+	position: relative;
 	width: 100vw;
 	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 `

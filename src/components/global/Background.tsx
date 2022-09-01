@@ -67,10 +67,10 @@ const Scenes = styled.div`
 	backface-visibility: hidden;
 	@keyframes wave {
 		0% {
-			transform: rotateZ(0deg) translate3d(0, 1%, 0) rotateZ(0deg);
+			transform: rotateZ(360deg) translate3d(0, 1%, 0) rotateZ(-360deg);
 		}
 		100% {
-			transform: rotateZ(360deg) translate3d(0, 1%, 0) rotateZ(-360deg);
+			transform: rotateZ(0deg) translate3d(0, 1%, 0) rotateZ(0deg);
 		}
 	}
 `

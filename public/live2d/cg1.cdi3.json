@@ -1,0 +1,27 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "breath"
+		},
+		{
+			"Id": "armbuffer",
+			"GroupId": "",
+			"Name": "armbuffer"
+		},
+		{
+			"Id": "legbuffer",
+			"GroupId": "",
+			"Name": "legbuffer"
+		},
+		{
+			"Id": "legmovement",
+			"GroupId": "",
+			"Name": "legmovement"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": []
+}

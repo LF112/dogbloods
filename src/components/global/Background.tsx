@@ -3,9 +3,11 @@ import styled from 'styled-components'
 import Parallax from 'parallax-js'
 //[ package ]
 
-import CG1 from 'assets/webp/CG1.webp'
+import CG1 from 'assets/webp/CG0.webp'
 import Dot from 'assets/gif/dot.gif'
 //[ assets ]
+
+import Live2D from 'components/reusable/Live2D'
 
 //=> DOM
 export default () => {
@@ -25,7 +27,12 @@ export default () => {
 			<Flash />
 			<nav />
 			<Scenes ref={node}>
-				<img src={CG1} data-depth='0.1' />
+				<div data-depth='0.1'>
+					<div>
+						<Live2D l2dFileName={'cg1.model3.json'} l2dPath={'./live2d/'} />
+					</div>
+					<img src={CG1} />
+				</div>
 			</Scenes>
 		</Main>
 	)
@@ -54,12 +61,25 @@ const Main = styled.main`
 `
 
 const Scenes = styled.div`
-	> img {
-		width: 102%;
-		height: 100%;
-		margin-left: -2%;
-		object-fit: cover;
-		object-position: 28% 0%;
+	position: relative;
+	> div {
+		> img {
+			width: 104%;
+			height: 100%;
+			margin-left: -2%;
+			object-fit: cover;
+			object-position: 28% 0%;
+		}
+		> div {
+			position: absolute;
+			width: 70%;
+			height: 100%;
+			top: 5%;
+			left: 0;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+		}
 	}
 	animation: wave 5s 0.1s infinite linear;
 	transform: translate3d(0, 0, 0);

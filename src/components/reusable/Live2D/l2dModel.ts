@@ -665,7 +665,7 @@ export class l2dModel extends CubismUserModel {
 		if (this._model == null) return
 
 		//=> Canvas 尺寸
-		const viewport: number[] = [0, -320, canvas.width, canvas.height]
+		const viewport: number[] = [0, 0, canvas.width, canvas.height]
 
 		this.getRenderer().setRenderState(frameBuffer, viewport)
 		this.getRenderer().drawModel()
@@ -732,12 +732,12 @@ export class l2dModel extends CubismUserModel {
 		this._model.addParameterValueById(this._idParamEyeBallY, this._dragY)
 
 		//=> 呼吸运动
-		if (this._breath != null)
-			this._breath.updateParameters(this._model, deltaTimeSeconds)
+		// if (this._breath != null)
+		// 	this._breath.updateParameters(this._model, deltaTimeSeconds)
 
 		//=> 物理运动
-		if (this._physics != null)
-			this._physics.evaluate(this._model, deltaTimeSeconds)
+		// if (this._physics != null)
+		// 	this._physics.evaluate(this._model, deltaTimeSeconds)
 
 		//=> 唇部运动
 		// if (this._lipsync) {

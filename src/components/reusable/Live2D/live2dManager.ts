@@ -9,8 +9,7 @@ import { csmVector } from 'lib/live2dFramework/src/type/csmvector'
 
 //=> Live2DCubismCore 日志输出
 export const CubismLogFn = (message: string): void => {
-	if (process.env.NODE_ENV === 'development')
-		console.log(`[FuTi-Live2D]${message}`)
+	if (process.env.NODE_ENV === 'development') console.log(`[Live2D]${message}`)
 }
 
 //=> MAIN ----------------------------------------
@@ -224,11 +223,10 @@ export const createShader = (gl: any): WebGLProgram => {
 export const getInitViewMatrix = (canvas: any) => {
 	const _initViewMatrix = new CubismViewMatrix()
 	const _deviceToScreen = new CubismMatrix44()
-
 	const { width, height } = canvas
 
 	const ratio: number = width / height
-	const left: number = -ratio
+	const left: number = ratio
 	const right: number = ratio
 	const bottom: number = -1.0
 	const top: number = 1.0

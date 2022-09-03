@@ -42,7 +42,7 @@ export default (props: any) => {
 		// 初始化 cubism SDK
 		CubismFramework.initialize()
 
-		const CANVAS = WebGl2Canvas(node.current, 2048, 2048)
+		const CANVAS = WebGl2Canvas(node.current, 1530, 929)
 		//=> 装载模型
 		initModel(CANVAS, l2dPath, l2dFileName, () => {
 			console.log('成功！')
@@ -74,8 +74,8 @@ const Main = styled.main`
 	canvas {
 		pointer-events: none;
 		touch-action: none;
-		width: 1048px;
-		height: 1048px;
+		width: 1530px;
+		height: 929px;
 		transform: scale(0.71);
 		cursor: inherit;
 	}

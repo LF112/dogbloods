@@ -11,12 +11,11 @@ import App from './App.tsx'
 //=> Render | 渲染页面
 //=> 绑定渲染组件↓
 createRoot(document.getElementById('WetDogs')).render(
-	<React.StrictMode>
-		{/* 引用全局样式 */}
+	<>
 		<GlobalStyle />
 		{/* MAIN */}
 		<App />
-	</React.StrictMode>
+	</>
 )
 
 //=> 控制台徽章

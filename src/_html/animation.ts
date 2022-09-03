@@ -19,6 +19,12 @@ export const AnimationCSS = css`
 		}
 	}
 
+	@keyframes animate {
+		100% {
+			background-position: 100px 0;
+		}
+	}
+
 	@keyframes breath {
 		from {
 			opacity: 0.4;

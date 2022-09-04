@@ -51,31 +51,32 @@ const Main = styled.main`
 const GameName = styled.div`
 	> * {
 		font-family: 'REEJI-PinboGB';
-		text-shadow: rgba(6, 7, 25, 50%) 0.05em 0.05em 0px;
 	}
 	> h1 {
 		color: rgba(255, 255, 255, 0.65);
 		font-size: 3rem;
 		font-weight: 400;
+		text-shadow: rgba(6, 7, 25, 50%) 0.05em 0.05em 0px;
 	}
 	> h2 {
 		color: rgba(255, 255, 255, 0.55);
 		font-size: 2rem;
-		/* display: initial;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
 		transition: all 0.5s linear;
-		animation: animate 5s linear infinite;
+		animation: animate 3s linear infinite;
 		background-size: 100px 100px;
 		background-image: linear-gradient(
 			to right bottom,
-			#21252b 0%,
-			#21252b 25%,
-			#ffe92c 25%,
-			#ffe92c 50%,
-			#21252b 50%,
-			#21252b 75%,
-			#ffe92c 75%,
-			#ffe92c 100%
+			#313131 0%,
+			#313131 25%,
+			#ffe401 25%,
+			#ffe401 50%,
+			#313131 50%,
+			#313131 75%,
+			#ffe401 75%,
+			#ffe401 100%
 		);
-		padding: 0 4px 0 2px; */
+		user-select: none;
 	}
 `

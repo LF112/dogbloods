@@ -40,7 +40,7 @@ const Main = styled.main`
 	display: flex;
 	justify-content: flex-end;
 	> div {
-		width: 50%;
+		width: 65%;
 		display: flex;
 		align-items: center;
 		justify-content: center;

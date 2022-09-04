@@ -46,11 +46,13 @@ const LogoText = styled.div`
 		/* -webkit-text-fill-color: transparent;
 		background: linear-gradient(92deg, #ffe82c -1.37%, #e8bc23 78.71%);
 		-webkit-background-clip: text; */
+		text-shadow: rgba(6, 7, 25, 50%) 0.05em 0.05em 0px;
 	}
 	> p {
 		color: hsl(0deg, 0%, 100%, 72%);
 		font-size: 12px;
 		font-family: 'Play', sans-serif;
 		line-height: 1;
+		text-shadow: rgba(6, 7, 25, 50%) 0.05em 0.05em 0px;
 	}
 `

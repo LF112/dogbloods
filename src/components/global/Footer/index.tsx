@@ -3,12 +3,14 @@ import styled from 'styled-components'
 //[ package ]
 
 import Menu from 'components/global/Menu'
+import Download from 'components/global/Download'
 //[ components ]
 
 //=> DOM
 export default () => {
 	return (
 		<Footer>
+			<Download />
 			<Menu />
 		</Footer>
 	)

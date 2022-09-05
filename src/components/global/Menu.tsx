@@ -42,7 +42,6 @@ export default () => {
 const Main = styled.main`
 	width: 528px;
 	height: 60px;
-	margin-top: 15px;
 `
 
 const Nav = styled.nav`

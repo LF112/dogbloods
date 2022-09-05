@@ -4,25 +4,35 @@ import styled from 'styled-components'
 
 import Background from 'components/global/Background'
 import Header from 'components/global/Header'
-import Main from 'components/page'
+import Page from 'components/page'
 import Footer from 'components/global/Footer'
+import { Mask } from 'components/global/Mask'
 //[ components ]
 
 //=> Main Component
 export default () => {
 	return (
-		<Page>
+		<Container>
 			<Background />
-			<Header />
-			<Main />
-			<Footer />
-		</Page>
+			<Mask />
+			<Main>
+				<Header />
+				<Page />
+				<Footer />
+			</Main>
+			<Mask />
+		</Container>
 	)
 }
 
 //=> Style Component
-const Page = styled.main`
+const Container = styled.main`
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+`
+
+const Main = styled.main`
+	width: 100vw;
+	height: calc(100vh - 16%);
 `

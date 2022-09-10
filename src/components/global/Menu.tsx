@@ -1,13 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { useNavigate, useLocation } from 'react-router-dom'
 //[ package ]
 
 import Menu from 'components/reusable/Menu'
 //[ components ]
 
+import { _pageLoad } from 'store/status'
+//[ store ]
+
 //=> DOM
 export default () => {
+	const navigate = useNavigate()
+	const { pathname } = useLocation()
+
 	const [choose, setChoose] = useState<string>('')
+
+	useEffect(() => {
+		if (choose !== '' && pathname !== choose) {
+			_pageLoad.set(false)
+			setTimeout(() => navigate(choose), 250)
+		} else if (pathname !== '/') {
+			navigate(pathname)
+			setChoose(pathname)
+		}
+	}, [choose])
 
 	return (
 		<Main>
@@ -24,13 +41,15 @@ export default () => {
 					</div>
 				</Decorate2>
 				<Menu
+					Default={pathname}
 					setChoose={setChoose}
 					list={[
-						['PV', '0'],
-						['剧情简介', '1'],
-						['人物介绍', '2'],
-						['关于', '3'],
-						['周边', '4']
+						['首页', '/'],
+						['PV', '/pv'],
+						['剧情简介', '/story'],
+						['人物介绍', '/character'],
+						['关于', '/about'],
+						['周边', '/merchandise']
 					]}
 				/>
 			</Nav>

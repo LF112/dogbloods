@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 //[ package ]
 
@@ -12,11 +12,30 @@ export default (props: any) => {
 	const [chooseWidth, setChooseWidth] = useState<Number>(0)
 	const [chooseLeft, setChooseLeft] = useState<Number>(0)
 
+	const node = useRef<HTMLElement>(null)
+
 	//=> Set the initial selection bar position
 	useEffect(() => {
-		list.forEach((item: any, index: number) => {
-			if (item.to === Default) updateChoose(index)
+		const { current: DOM } = node
+
+		let NodeIndex = 0
+		list.forEach(([, to], index: number) => {
+			if (to === Default) {
+				NodeIndex = index
+				updateChoose(index)
+			}
 		})
+
+		if (DOM) {
+			setTimeout(() => {
+				const { clientWidth, offsetLeft } = DOM.childNodes[NodeIndex] as any
+
+				setChooseWidth(clientWidth)
+				setChooseLeft(offsetLeft - 22)
+				setTouchWidth(clientWidth)
+				setTouchLeft(offsetLeft - 22)
+			}, 116)
+		}
 	}, [Default])
 
 	const handleTouch = (event: any) => {
@@ -34,7 +53,7 @@ export default (props: any) => {
 	}
 
 	return (
-		<Main style={style}>
+		<Main ref={node} style={style}>
 			{list.map(([name, to], index: number) => {
 				return (
 					<Item

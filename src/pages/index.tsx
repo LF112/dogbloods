@@ -36,6 +36,7 @@ export default () => {
 	return (
 		<Routes>
 			<Route path={`/`} element={PAGE('Home')} />
+			<Route path={`/pv`} element={PAGE('Pv')} />
 		</Routes>
 	)
 }

@@ -49,6 +49,9 @@ export const releaseModel = () => {
 	_models.clear()
 }
 
+let _STOP = false
+export const STOP = () => (_STOP = true)
+
 //=> 渲染模型
 export const renderModel = (WebGl2Canvas: any) => {
 	//=> 绘制模型
@@ -56,20 +59,23 @@ export const renderModel = (WebGl2Canvas: any) => {
 	const programId = createShader(gl)
 	const initViewMatrix = getInitViewMatrix(WebGl2Canvas[2])
 
+	_STOP = false
 	//=> Main
 	const loop = (): void => {
-		//=> 更新画布帧
-		l2dModel.updateTime()
+		if (!_STOP) {
+			//=> 更新画布帧
+			l2dModel.updateTime()
 
-		// 穿透
-		gl.enable(gl.BLEND)
-		gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
+			// 穿透
+			gl.enable(gl.BLEND)
+			gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
 
-		// 更新 Canvas
-		render(programId, gl, WebGl2Canvas[1], WebGl2Canvas[2], initViewMatrix)
+			// 更新 Canvas
+			render(programId, gl, WebGl2Canvas[1], WebGl2Canvas[2], initViewMatrix)
 
-		//=> 循环渲染 requestAnimationFrame
-		requestAnimationFrame(loop)
+			//=> 循环渲染 requestAnimationFrame
+			requestAnimationFrame(loop)
+		} else _STOP = false
 	}
 	loop()
 }

@@ -13,7 +13,8 @@ import {
 	CubismLogFn,
 	initModel,
 	WebGl2Canvas,
-	renderModel
+	renderModel,
+	STOP
 } from './live2dManager'
 //[ utils ]
 
@@ -55,6 +56,7 @@ export default (props: any) => {
 		renderModel(CANVAS)
 
 		return () => {
+			STOP()
 			//=> 释放 Cubism SDK 实例
 			CubismFramework.dispose()
 			_live2dLoad.set(false)

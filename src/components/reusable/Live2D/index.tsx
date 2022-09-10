@@ -23,6 +23,9 @@ import {
 } from 'lib/live2dFramework/src/live2dcubismframework'
 //[ libs ]
 
+import { _live2dLoad } from 'store/status'
+//[ store ]
+
 //=> DOM
 export default (props: any) => {
 	const { l2dPath, l2dFileName } = props
@@ -45,7 +48,7 @@ export default (props: any) => {
 		const CANVAS = WebGl2Canvas(node.current, 1530, 929)
 		//=> 装载模型
 		initModel(CANVAS, l2dPath, l2dFileName, () => {
-			console.log('成功！')
+			_live2dLoad.set(true)
 		})
 
 		//=> 渲染模型
@@ -54,12 +57,13 @@ export default (props: any) => {
 		return () => {
 			//=> 释放 Cubism SDK 实例
 			CubismFramework.dispose()
+			_live2dLoad.set(false)
 		}
 	}, [])
 
 	return (
 		<Main ref={mainNode}>
-			<canvas ref={node}></canvas>
+			<canvas ref={node} />
 		</Main>
 	)
 }

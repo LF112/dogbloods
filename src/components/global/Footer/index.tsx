@@ -18,10 +18,13 @@ export default () => {
 
 //=> Style
 const Footer = styled.footer`
+	position: absolute;
 	width: 100%;
 	height: 75px;
 	padding: 0 5% 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 10;
+	bottom: 2%;
 `

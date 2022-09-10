@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { HashRouter as Router } from 'react-router-dom'
 //[ package ]
 
-import Background from 'components/global/Background'
 import Header from 'components/global/Header'
-import Page from 'components/page'
+import Page from 'pages'
+import Loading from 'pages/Loading'
 import Footer from 'components/global/Footer'
 import { Mask } from 'components/global/Mask'
 //[ components ]
@@ -13,14 +14,16 @@ import { Mask } from 'components/global/Mask'
 export default () => {
 	return (
 		<Container>
-			<Background />
-			<Mask />
+			<Mask style={{ top: 0 }} />
 			<Main>
-				<Header />
-				<Page />
-				<Footer />
+				<Router>
+					<Header />
+					<Page />
+					<Footer />
+				</Router>
 			</Main>
-			<Mask />
+			<Loading />
+			<Mask style={{ bottom: 0 }} />
 		</Container>
 	)
 }
@@ -30,9 +33,14 @@ const Container = styled.main`
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+	display: flex;
+	align-items: center;
 `
 
 const Main = styled.main`
+	position: relative;
 	width: 100vw;
 	height: calc(100vh - 16%);
+	display: flex;
+	align-items: center;
 `

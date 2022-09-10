@@ -16,6 +16,9 @@ export default () => {
 
 //=> Style
 const Header = styled.header`
+	position: absolute;
 	padding: 5% 5% 0;
 	user-select: none;
+	top: 0;
+	z-index: 10;
 `

@@ -8,10 +8,16 @@ import Dot from 'assets/gif/dot.gif'
 //[ assets ]
 
 import Live2D from 'components/reusable/Live2D'
+//[ components ]
+
+import { _live2dLoad, $ } from 'store/status'
+//[ store ]
 
 //=> DOM
 export default () => {
 	const node = useRef<HTMLDivElement>()
+
+	const live2dLoad = $(_live2dLoad)
 
 	useEffect(() => {
 		const ParallaxDOM = node?.current
@@ -23,7 +29,7 @@ export default () => {
 	}, [node])
 
 	return (
-		<Main>
+		<Main show={live2dLoad}>
 			<Flash />
 			<nav />
 			<Scenes ref={node}>
@@ -39,13 +45,14 @@ export default () => {
 }
 
 //=> Style
-const Main = styled.main`
+const Main = styled.main<{ show: boolean }>`
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	top: 0;
 	left: 0;
 	z-index: -1;
+	opacity: ${({ show }) => (show ? 1 : 0)};
 	> nav:before {
 		content: '';
 		position: absolute;

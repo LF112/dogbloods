@@ -23,11 +23,10 @@ export default () => {
 	const [SHOW, setSHOW] = useState<Boolean>(false)
 	const pageLoad = $(_pageLoad)
 	useEffect(() => {
-		if (!pageLoad) {
-			_pageLoad.set(true)
-			setSHOW(true)
-			// _coverHeight.set(9)
-		}
+		// if (!pageLoad) {
+
+		// 	// _coverHeight.set(9)
+		// }
 
 		return () => setPlaying(false)
 	}, [''])
@@ -44,7 +43,8 @@ export default () => {
 				width='100%'
 				height='110%'
 				onReady={() => {
-					console.log('Ready!')
+					_pageLoad.set(true)
+					setSHOW(true)
 				}}
 			/>
 		</Main>

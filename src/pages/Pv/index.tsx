@@ -17,16 +17,16 @@ const URL = `https://cn-gddg-dx-bcache-10.bilivideo.com/upgcxcode/31/74/80692743
 export default () => {
 	//const videoNode = useRef<ReactPlayer>()
 
-	const [playing, setPlaying] = useToggle(true)
+	const [playing, setPlaying] = useToggle(false)
 
 	//=> MAIN EFFECTS
 	const [SHOW, setSHOW] = useState<Boolean>(false)
 	const pageLoad = $(_pageLoad)
 	useEffect(() => {
-		// if (!pageLoad) {
-
-		// 	// _coverHeight.set(9)
-		// }
+		if (!pageLoad) {
+			setPlaying(true)
+			// _coverHeight.set(9)
+		}
 
 		return () => setPlaying(false)
 	}, [''])

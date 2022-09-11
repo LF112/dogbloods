@@ -7,7 +7,7 @@ import Header from 'components/global/Header'
 import Page from 'pages'
 import Loading from 'pages/Loading'
 import Footer from 'components/global/Footer'
-import { Mask } from 'components/global/Mask'
+import Mask from 'components/global/Mask'
 //[ components ]
 
 //=> Main Component

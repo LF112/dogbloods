@@ -37,6 +37,10 @@ export default () => {
 		<Routes>
 			<Route path={`/`} element={PAGE('Home')} />
 			<Route path={`/pv`} element={PAGE('Pv')} />
+			<Route path={`/story`} element={PAGE('Story')} />
+			<Route path={`/about`} element={PAGE('About')} />
+			<Route path={`/character`} element={PAGE('Character')} />
+			<Route path={`/merchandise`} element={PAGE('Merchandise')} />
 		</Routes>
 	)
 }

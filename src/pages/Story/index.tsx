@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 //[ package ]
 
+import MisterBG from 'assets/webp/Mister.webp'
+//[ asset ]
+
+import Context from 'components/page/Story/Context'
+
 import { _pageLoad, $ } from 'store/status'
 //[ store ]
 
@@ -19,9 +24,12 @@ export default () => {
 
 	return (
 		<Main
-			style={
-				SHOW && !pageLoad ? { animation: 'FadeOut 0.5s forwards' } : {}
-			}></Main>
+			style={SHOW && !pageLoad ? { animation: 'FadeOut 0.5s forwards' } : {}}>
+			<div>
+				<Context />
+				<img src={MisterBG} />
+			</div>
+		</Main>
 	)
 }
 
@@ -30,4 +38,14 @@ const Main = styled.main`
 	width: 100%;
 	height: 100vh;
 	animation: FadeIn 0.25s forwards;
+	> div {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		> img {
+			height: 100vh;
+			margin-top: 12%;
+		}
+	}
 `

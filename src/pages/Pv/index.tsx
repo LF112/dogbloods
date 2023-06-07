@@ -11,7 +11,7 @@ import { _pageLoad, $ } from 'store/status'
 import useToggle from 'utils/useToggle'
 //[ utils ]
 
-const URL = `https://video.busiyi.world/bili.mp4?aid=259631602&bvid=BV1na411d79D&cid=806927431`
+const URL = `http://storage.live.com/items/E6563FC4FBE3BDD4!5044:/Dogbloods.mp4?&authkey=AIo6RFEF6evtpYA`
 
 //=> DOM
 export default () => {
@@ -34,7 +34,8 @@ export default () => {
 	return (
 		<Main
 			style={SHOW && !pageLoad ? { animation: 'FadeOut 0.5s forwards' } : {}}
-			onClick={() => setPlaying()}>
+			onClick={() => setPlaying()}
+		>
 			<ReactPlayer
 				//ref={videoNode}
 				playing={playing}
@@ -55,8 +56,6 @@ export default () => {
 const Main = styled.main`
 	width: 100%;
 	height: 100vh;
+	transform: scale(1.05);
 	animation: FadeIn 0.25s forwards;
-	> div {
-		margin-top: -2%;
-	}
 `

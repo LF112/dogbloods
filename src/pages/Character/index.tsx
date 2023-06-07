@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 //[ package ]
 
+import Nav from 'components/page/Character/Nav'
+
 import { _pageLoad, $ } from 'store/status'
 //[ store ]
 
 //=> DOM
 export default () => {
+	const [choose, setChoose] = useState<number>(0)
+
 	//=> MAIN EFFECTS
 	const [SHOW, setSHOW] = useState<Boolean>(false)
 	const pageLoad = $(_pageLoad)
@@ -19,9 +23,13 @@ export default () => {
 
 	return (
 		<Main
-			style={
-				SHOW && !pageLoad ? { animation: 'FadeOut 0.5s forwards' } : {}
-			}></Main>
+			style={SHOW && !pageLoad ? { animation: 'FadeOut 0.5s forwards' } : {}}>
+			<Nav
+				choose={choose}
+				setChoose={setChoose}
+				list={['主人公', '前辈', '死神', '王子殿下', '警察同志']}
+			/>
+		</Main>
 	)
 }
 

@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client'
 import { GlobalStyle } from './_html/style'
 //[ style ]
 
-import App from './App.tsx'
+import App from './App'
 //[ APP ]
 
 //=> Render | 渲染页面
